@@ -1,0 +1,145 @@
+yum -y install yum-util
+  121  yum -y install yum-utils
+  122   systemctl stop firewalld
+  123   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo
+  124   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no check
+  125   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no-check
+  126  yum -y install xCAT
+  127  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/xcat-dep/rh7/x86_64/xcat-dep.repo
+  128  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/xcat-dep/rh7/x86_64/xcat-dep.repo --no-check
+  129  yum -y install yum-utils
+  130  ip s
+  131  ip a
+  132  numtui
+  133  nmtui
+  134  ip a
+  135  yum -y install yum-utils
+  136  curl google.com
+  137  kill -9 9600
+  138  yum -y install yum-utils
+  139   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo
+  140   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no-check
+  141   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/xcat-dep/rh7/x86_64/xcat-dep.repo --no-check
+  142  yum -y install xCAT
+  143  . /etc/profile.d/xcat.sh
+  144  xcatprobe xcatmn -i ens36
+  145  # ifconfig ens36 192.168.1.1 netmask 255.255.255.0 up
+  146   chdef -t site dhcpinterfaces="xcatmn | ens36"
+  147  ls
+  148  ip a
+  149  ls
+  150  yum install chrony
+  151  ls /install
+  152  copycds /root/CentOS-7-x86_64-DVD-2009.iso 
+  153  ls /install
+  154  lsdef -t osimage
+  155  tabedit site
+  156  hostsname
+  157  hostname
+  158  hostnamectl set-hostname
+  159  hostnamectl set-hostname master.demo.lab
+  160  cat /etc/hosts
+  161  makehosts
+  162  cat /etc/hosts
+  163  tabedit site
+  164  vi /etc/hosts
+  165  vi /etc/chrony.conf
+  166  tabdump passwd
+  167  timedatectl
+  168  setenforce 0
+  169  getenforce
+  170  chtab key=system passwd.username=root
+  171  chtab key=system passwd.username=root passwd.password=root
+  172  xcatprob xcatmn -i ens36
+  173  xcatprobe xcatmn -i ens36
+  174  systemctl start chrony
+  175  systemctl start chronyd
+  176  timedatectl
+  177  systemctl stop tftp
+  178  systemctl disable tftp
+  179  systemctl stop xinetd
+  180  systemctl disable xinetd
+  181  systemctl stop tftp.socket
+  182  systemctl disable tftp.socket
+  183  makedhcp -n
+  184  makedhcp -a
+  185  makedns -n
+  186  makedns -a
+  187  cat /etc/hosts
+  188  ip a
+  189  cat /etc/hosts
+  190  makehosts
+  191  cat /etc/hosts
+  192  chdef -t site dhcpinterfaces="ens36"
+  193  makehosts
+  194  cat /etc/hosts
+  195  makenetworks
+  196  cat /etc/hosts
+  197  xcatprobe xcatmn -i ens36
+  198  systemctl status xcat
+  199  systemctl status xcatd
+  200  lsdef -t osimage
+  201  genimage centos7.9-x86_64-install-compute
+  202  makedef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 arch=x86_64
+  203  mkdef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 arch=x86_64
+  204  lsdef 
+  205  lsdef  cn001
+  206  centos7.9-x86_64-install-compute
+  207  xcatprobe xcatmn -i ens36
+  208  tabedit site
+  209  nodeset compute osimage=centos7.9-x86_64-install-compute
+  210  nodeset cn001 osimage=centos7.9-x86_64-install-compute
+  211  systemctl status xcat
+  212  systemctl status xcatd
+  213  systemctl status dhcpd
+  214  cat /etc/hosts
+  215  ip a
+  216  tabedit site
+  217  xcatprobe xcatmn -i ens36
+  218  systemctl status tftp
+  219  makenetworks
+  220  makedns
+  221  cat /etc/hosts
+  222  tabedit site
+  223  vi /etc/chrony.conf
+  224  makehosts
+  225  makedns
+  226  makenetworks
+  227  xcatprobe xcatmn -i ens36
+  228  systemctl start chronyd
+  229  systemctl status chronyd
+  230  makedhcp -n
+  231  makedhcp -a
+  232  makedns -n
+  233  makedns -a
+  234* 
+  235  xcatprobe xcatmn -i ens36
+  236  nodeset compute osimage=centos7.7-x86_64-install-compute
+  237* 
+  238  nodeset compute osimage=centos7.7-x86_64-install-compute
+  239  nodeset compute osimage=centos7.9-x86_64-install-compute
+  240  nodeset cn001 osimage=centos7.9-x86_64-install-compute
+  241  lsdef cn001
+  242  lsdef -t osimage
+  243  nodeset cn001 osimage=centos7.9-x86_64-install-compute
+  244  mkdef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 arch=x86_64
+  245  ip a
+  246  tabedit site
+  247  genimage -t centos7.9-x86_64-install-compute -o mycomputeosimage --osname=centos7.9 -p cn001
+  248  genimage -t centos7.9-x86_64-install-compute -o mycomputeosimage --osname=centos7.9 -p compute
+  249  genimage -t osimage -o centos7.9-x86_64-install-compute --osname=centos7.9 -p compute
+  250* 
+  251  ip a
+  252  cat /etc/hosts
+  253  cat /etc/hostname 
+  254  mkdef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 netboot=xnba arch=x86_64
+  255  tabedit site
+  256  lsdef -t osimage
+  257  nodeset cn001 osimage=centos7.9-x86_64-install-compute
+  258  lsdef cn001
+  259  ls
+  260  mkdef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 netboot=xnba arch=x86_64
+  261  chdef -t node cn001 mac=00:0C:29:16:3D:BA groups=all ip=192.168.1.13 netboot=xnba arch=x86_64
+  262  nodeset cn001 osimage=centos7.9-x86_64-install-compute
+  263  lsdef -t osimage
+  264  history
