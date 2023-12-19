@@ -1,0 +1,47 @@
+ 1  systemctl status firewalld
+    2  getenforce
+    3  setenforce 0
+    4  getenforce
+    5  yum -y install yum-utils
+    6  systemctl stop firewalld
+    7  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no check
+    8  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo
+    9  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no check
+   10  wget --help
+   11   wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/latest/xcat-core/xcat-core.repo --no-check
+   12  wget -P /etc/yum.repos.d https://xcat.org/files/xcat/repos/yum/xcat-dep/rh7/x86_64/xcat-dep.repo --no-check
+   13  yum -y install xCAT
+   14  . /etc/profile.d/xcat.sh
+   15  xcatprobe xcatmn -i ens36
+   16  hostname
+   17  tabedit site
+   18  chdef -t site dhcpinterfaces="ens36"
+   19  xcatprobe xcatmn -i ens36
+   20  chtab key=system passwd.username=root passwd.password=root
+   21  syatemctl stop xinetd
+   22  systemctl stop xinetd
+   23  systemctl disable xinetd
+   24  systemctl stop tftp
+   25  systemctl disable tftp
+   26  systemctl stop tftp.socket
+   27  systemctl disable tftp.socket
+   28  makehosts
+   29  makedns -n
+   30  makedns -a
+   31  makedhcp -n
+   32  makedhcp -a
+   33  xcatprobe xcatmn -i ens36
+   34  systemctl start chronyd
+   35   vi /etc/chrony.conf
+   36  systemctl start xcat
+   37  systemctl start xcatd
+   38  setenforce 0
+   39  xcatprobe xcatmn -i ens36
+   40  makehosts
+   41  makedns -n
+   42  makedns -a
+   43  xcatprobe xcatmn -i ens36
+   44  tabedit site
+   45  chdef -t site nameserver="192.168.1.1"
+   46  xcatprobe xcatmn -i ens36
+   47  history
